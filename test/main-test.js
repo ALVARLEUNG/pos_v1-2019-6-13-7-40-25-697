@@ -30,4 +30,16 @@ describe('pos', () => {
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
+
+  it('should return result', () => {
+    const tags = [
+      'ITEM000001'
+    ];
+    spyOn(console, 'log');
+
+    isCartItemValid(tags);
+
+    const expectText = {barcode:ITEM000001, status: true, message:''};
+    expect(console.log).toHaveBeenCalledWith(expectText);
+  });
 });
